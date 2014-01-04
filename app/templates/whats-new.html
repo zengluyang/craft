@@ -1,0 +1,32 @@
+{% extends "_layouts/cp" %}
+{% set title = "What’s new in Craft 1.3" %}
+{% includeCssResource "css/whats-new.css" %}
+
+{% set content %}
+	<h1>Welcome to Craft 1.3.</h1>
+
+	<div class="feature matrix">
+		<h2>Introducing Matrix.</h2>
+		<p>Matrix is a powerful field type that enables a new level of content flexibility in Craft. It’s great for times when you need to store repeating content, or string multiple types of content together.</p>
+
+		<ul>
+			<li><a class="go" href="http://buildwithcraft.com/features/matrix" target="_blank">Find out more about Matrix</a></li>
+			<li><a class="go" href="http://pixelandtonic.com/blog/craft-1.3" target="_blank">Read more about what’s new in Craft 1.3</a></li>
+		</ul>
+	</div>
+{% endset %}
+
+
+{% set js %}
+	if (typeof Storage !== 'undefined')
+	{
+		for (var key in localStorage)
+		{
+			if (key.substr(0, 5) == 'Craft' && key.substr(5, 1) != '-')
+			{
+				delete localStorage[key];
+			}
+		}
+	}
+{% endset %}
+{% includeJs js %}

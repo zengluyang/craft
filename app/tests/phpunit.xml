@@ -1,0 +1,69 @@
+<phpunit
+		bootstrap = "bootstrap.php"
+		colors = "true"
+		convertErrorsToExceptions = "true"
+		convertNoticesToExceptions = "false"
+		convertWarningsToExceptions = "false"
+		stopOnFailure = "true"
+		stopOnError="true"
+		stopOnIncomplete="false"
+		stopOnSkipped="false"
+		syntaxCheck="true"
+		verbose="true"
+		strict="false">
+
+		<filter>
+			<blacklist>
+				<directory suffix=".php">../framework</directory>
+				<directory suffix=".php">../lib</directory>
+				<directory suffix=".php">../vendor</directory>
+			</blacklist>
+		</filter>
+
+		<logging>
+			<log type="coverage-clover" target="report/phpunit/coverage.xml" />
+			<log type="coverage-html" target="report/phpunit/report" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70" />
+			<log type="junit" target="report/phpunit/junit.xml" logIncompleteSkipped="true" />
+			<log type="testdox-html" target="report/phpunit/testdox.html" />
+			<log type="testdox-text" target="report/phpunit/testdox.txt" />
+		</logging>
+
+</phpunit>
+
+<!--<phpunit
+		bootstrap="bootstrap.php"
+		colors="false"
+		backupGlobals="false"
+		backupStaticAttributes="true"
+		cacheTokens="true"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		stopOnFailure="false"
+		forceConversAnnotation="false"
+		mapTestClassNameToCoveredClassName="false"
+		printerClass="PHPUnit_TextUI_ResultPrinter"
+		processIsolation="false"
+		stopOnError="true"
+		stopOnIncomplete="true"
+		stopOnSkipped="false"
+		testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+		syntaxCheck="true"
+		verbose="true"
+		strict="true">
+
+	<selenium>
+		<browser name="Internet Explorer" browser="*iexplore" />
+		<browser name="Firefox" browser="*firefox" />
+	</selenium>
+
+	<logging>
+		<log type="coverage-clover" target="report/phpunit/coverage.xml" />
+		<log type="coverage-html" target="report/phpunit/report" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70" />
+		<log type="junit" target="report/phpunit/junit.xml" logIncompleteSkipped="true" />
+		<log type="testdox-html" target="report/phpunit/testdox.html" />
+		<log type="testdox-text" target="report/phpunit/testdox.txt" />
+	</logging>
+
+</phpunit>
+-->
